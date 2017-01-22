@@ -43,7 +43,7 @@ Every _package_ is responsible for managing the routes to the _scenes_ inside. I
 The Router maps routes to _scenes_.
 
 ### Scenes
-Scenes are used by the Router. A Scene is a React component with no data, no behaviour and no presentation. A scene groups Containers and Components, to create an application page.
+Scenes are used by the Router. A scene is a React component with **no data, no behaviour and no presentation**. A scene groups Containers and Components, to create an application page.
 
 ### Containers
 [TODO]
