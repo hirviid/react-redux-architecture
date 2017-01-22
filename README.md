@@ -10,7 +10,7 @@ An opinionated architecture for structuring large React/Redux applications.
 	- [App](#app)
 	- [Packages](#packages)
 	- [Modules](#modules)
-* [Building blocks & relations](#building-blocks-and-relations)
+* [Building blocks & relations](#building-blocks--relations)
 	- [Client side routing](#client-side-routing)
 	- [Scenes](#scenes)
 	- [Containers](#containers)
@@ -39,10 +39,11 @@ You should aim to reduce the coupling of related Modules by making the dependenc
 ## Building blocks & relations
 
 ### Client side routing
-[TODO]
+Every _package_ is responsible for managing the routes to the _scenes_ inside. If you don’t have the _packages_ layer, your routes are defined in the _app_ layer. 
+The Router maps routes to _scenes_.
 
 ### Scenes
-[TODO]
+Scenes are used by the Router. A Scene is a React component with no data, no behaviour and no presentation. A scene groups Containers and Components, to create an application page.
 
 ### Containers
 [TODO]
