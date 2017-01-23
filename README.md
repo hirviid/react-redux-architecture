@@ -16,6 +16,11 @@ An opinionated architecture for structuring large React/Redux applications.
 	- [Containers](#containers)
  	- [Components](#components)
 	- [Services](#services)
+	- [REDUX Reducers and Actions](#redux-reducers-and-actions)
+	- [REDUX Sagas](#redux-sagas)
+	- [REDUX Store and middleware](#redux-store-and-middleware)
+	- [3rd party - redux-form](#3rd-party—redux-form)
+	- [3rd party - react-redux-fetch](#3rd-party-react-redux-fetch)
 
 ## Diagram
 <img src="https://cloud.githubusercontent.com/assets/6641475/22184991/ff441c9a-e0dc-11e6-8238-7bd5e684686f.png" alt=“React Redux Architecture“ width="500" />
@@ -54,3 +59,18 @@ A React component (preferably a [functional component](https://facebook.github.i
 
 ### Services
 Services are React’s [Higher-Order Components (hoc)](https://facebook.github.io/react/docs/higher-order-components.html). Services provide data and behaviour to containers. Encapsulating data and behaviour in a _service_ in stead of in a _container_ has the advantage of being very reusable inside your application. Especially if your project has both React and React Native code.
+
+### REDUX Reducers and Actions
+[TODO]
+
+### REDUX Sagas
+[TODO]
+
+### REDUX Store and middleware
+[TODO]
+
+### 3rd party - redux-form
+[TODO]
+
+### 3rd party - react-redux-fetch
+[TODO]
