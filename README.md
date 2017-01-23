@@ -43,13 +43,14 @@ Every _package_ is responsible for managing the routes to the _scenes_ inside. I
 The Router maps routes to _scenes_.
 
 ### Scenes
-Scenes are used by the Router. A scene is a React component with **no data, no behaviour and no presentation**. A scene groups Containers and Components, to create an application page.
+Scenes are used by the Router. A scene is a React component with **no data, no behaviour and no presentation**. A scene groups containers and components, to create an application page.
 
 ### Containers
-[TODO]
+Containers are rendered by scenes, components or other containers. A container is a React component with **no data, no presentation and little or no behaviour**. Containers work as the glue between services, containers and components. Containers are sometimes referred to as _smart components_.
 
 ### Components
-[TODO]
+Components are the smallest building blocks of the application. Scenes, containers and other components can render these components.
+A React component (preferably a [functional component](https://facebook.github.io/react/docs/components-and-props.html#functional-and-class-components)) with **no data and no behaviour. Pure presentation/UI**. Sometimes referred to as _dumb components_ or _presentational components_.
 
 ### Services
-[TODO]
+Services are React’s [Higher-Order Components (hoc)](https://facebook.github.io/react/docs/higher-order-components.html). Services provide data and behaviour to containers. Encapsulating data and behaviour in a _service_ in stead of in a _container_ has the advantage of being very reusable inside your application. Especially if your project has both React and React Native code.
