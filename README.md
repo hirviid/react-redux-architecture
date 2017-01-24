@@ -104,7 +104,7 @@ export default combineReducers({
 ```
 
 ### redux-form
-[redux-form](http://redux-form.com/) helps reducing indeterminism caused by user input, by storing al inputs in the redux state. 
+[redux-form](http://redux-form.com/) helps reducing indeterminism caused by user input, by storing all inputs in the redux state. 
 
 ### react-redux-fetch
 Building a large application probably means having many, many interactions with a back-end service. Writing action types, actions, reducers, sagas etc for every interaction requires a lot of effort and boilerplate code. [react-redux-fetch](https://github.com/hirviid/react-redux-fetch) provides a good abstraction for this.
