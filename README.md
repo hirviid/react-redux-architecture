@@ -16,9 +16,9 @@ An opinionated architecture for structuring large React/Redux applications.
 	- [Containers](#containers)
  	- [Components](#components)
 	- [Services](#services)
-	- [REDUX Reducers and Actions](#redux-reducers-and-actions)
+	- [REDUX Reducers, Actions, Action types and Selectors](#redux-reducers-actions-action-types-and-selectors)
 	- [REDUX Sagas](#redux-sagas)
-	- [REDUX Store and middleware](#redux-store-and-middleware)
+	- [REDUX Root reducer, Root saga, Store and Middleware](#redux-root-reducer-root-saga-store-and-middleware)
 	- [3rd party - redux-form](#3rd-party---redux-form)
 	- [3rd party - react-redux-fetch](#3rd-party---react-redux-fetch)
 
