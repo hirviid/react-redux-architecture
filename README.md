@@ -88,6 +88,8 @@ Reducers and action types should be plain functions and as simple as possible. I
 
 [This stackoverflow](http://stackoverflow.com/questions/34930735/pros-cons-of-using-redux-saga-with-es6-generators-vs-redux-thunk-with-es7-async/34933395#34933395) gives a good explanation of why you should prefer redux-saga over e.g. redux-thunk.
 
+Sagas are tightly coupled to your module. They listen for certain action types and respond with new actions.
+
 ### REDUX Root reducer, Root saga, Store and Middleware
 Modules should be able to control where they are mounted in the state. This way, a module selector is not coupled to the root reducer. 
 
