@@ -40,7 +40,8 @@ Packages allow you to split a big problem into smaller problems so you can focus
 ### Modules
 A module represents related code of a specific concept of a package. For example the _Catalogue package_ could have a _Product module_, a _Cart module_ and an _Order module_ . 
 You should aim to reduce the coupling of related Modules by making the dependency between two Modules unidirectional. 
-
+Every module has an _index.js_ file which serves as the entry point for other modules. This way, a module can choose which parts it exposes in its public API.
+ 
 ## Building blocks & relations
 
 ### Client side routing
@@ -60,14 +61,45 @@ A React component (preferably a [functional component](https://facebook.github.i
 ### Services
 Services are React’s [Higher-Order Components (hoc)](https://facebook.github.io/react/docs/higher-order-components.html). Services provide data and behaviour to containers. Encapsulating data and behaviour in a _service_ in stead of in a _container_ has the advantage of being very reusable inside your application. Especially if your project has both React and React Native code.
 
-### REDUX Reducers and Actions
-[TODO]
+### REDUX Reducers, Actions, Action types and Selectors
+Each module should maintain their own state and actions. Every action type is prefixed with the module’s name to avoid name collisions.
+
+```js
+// cart/actionTypes.js
+export const ADD = ‘cart/ADD’;
+export const REMOVE = ‘cart/REMOVE’;
+``` 
+
+In order to loosely couple your components to the state, it is a good practice to write a _selectors.js_ file where you provide an abstraction layer for your state. A selector function receives the state and returns a (calculated) state leaf.
+
+```js
+// cart/selectors.js
+import { NAME } from ‘./constants’;
+
+export const getCartItems = state => state[NAME].items;
+```
+
+Also, this allows other modules to access the _cart_ state without having to know the exact structure.
+
+Only [Services](#services) should access the state, and pass the relevant data as props to the [Containers](#containers).
 
 ### REDUX Sagas
-[TODO]
+Reducers and action types should be plain functions and as simple as possible. In stead, use [redux-saga](https://github.com/redux-saga/redux-saga) for your side effects and application flows.
 
-### REDUX Store and middleware
-[TODO]
+[This stackoverflow](http://stackoverflow.com/questions/34930735/pros-cons-of-using-redux-saga-with-es6-generators-vs-redux-thunk-with-es7-async/34933395#34933395) gives a good explanation of why you should prefer redux-saga over e.g. redux-thunk.
+
+### REDUX Root reducer, Root saga, Store and Middleware
+Modules should be able to control where they are mounted in the state. This way, a module selector is not coupled to the root reducer. 
+
+```js
+// rootReducer.js
+import { combineReducers } from 'redux';
+import cart from ‘./catalogue/modules/cart’;
+
+export default combineReducers({
+  [cart.constants.NAME]: cart.reducer
+});
+```
 
 ### 3rd party - redux-form
 [TODO]
