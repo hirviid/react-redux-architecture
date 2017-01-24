@@ -19,8 +19,8 @@ An opinionated architecture for structuring large React/Redux applications.
 	- [REDUX Reducers, Actions, Action types and Selectors](#redux-reducers-actions-action-types-and-selectors)
 	- [REDUX Sagas](#redux-sagas)
 	- [REDUX Root reducer, Root saga, Store and Middleware](#redux-root-reducer-root-saga-store-and-middleware)
-	- [3rd party - redux-form](#3rd-party---redux-form)
-	- [3rd party - react-redux-fetch](#3rd-party---react-redux-fetch)
+	- [redux-form](#redux-form)
+	- [react-redux-fetch](#react-redux-fetch)
 
 ## Diagram
 <img src="https://cloud.githubusercontent.com/assets/6641475/22184991/ff441c9a-e0dc-11e6-8238-7bd5e684686f.png" alt=“React Redux Architecture“ width="500" />
@@ -103,8 +103,8 @@ export default combineReducers({
 });
 ```
 
-### 3rd party - redux-form
-[TODO]
+### redux-form
+[redux-form](http://redux-form.com/) helps reducing indeterminism caused by user input, by storing al inputs in the redux state. 
 
-### 3rd party - react-redux-fetch
-[TODO]
+### react-redux-fetch
+Building a large application probably means having many, many interactions with a back-end service. Writing action types, actions, reducers, sagas etc for every interaction requires a lot of effort and boilerplate code. [react-redux-fetch](https://github.com/hirviid/react-redux-fetch) provides a good abstraction for this.
