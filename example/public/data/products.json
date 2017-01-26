@@ -1,0 +1,32 @@
+{
+  "products": [{
+    "id": 1,
+    "name": "Glenmorangie Signet",
+    "price": {
+      "value": 197.50,
+      "currency": "EUR"
+    },
+    "description": "A fusion of unique and rare elements, and clouded in secrecy, Signet is the culmination of a lifetime's experience. A blend of our oldest whisky - distilled over thirty years ago when malting still occurred on site – and spirit matured in a selection of the world's finest casks, this undoubtedly is the richest whisky in our range.",
+    "type": "Single Malt",
+    "distillery":"Glenmorangie",
+    "content": "70cl",
+    "region": "North Highlands",
+    "country": "Scotland",
+    "alcohol": 46
+  },
+  {
+    "id": 2,
+    "name": "Dalmore King Alexander III",
+    "price": {
+      "value": 182.50,
+      "currency": "EUR"
+    },
+    "description": "Crafted to honour the act of saving Scotland’s King in 1263, this expression unites six specially selected casks housing spirit of perfect maturity. Whiskies matured in ex-bourbon casks, Matusalem oloroso sherry wood, Madeira barrels, Marsala casks, port pipes and Cabernet Sauvignon wine barriques are brought together in perfect harmony. Each cask gives its own flavour notes, delivering a unique complex single malt whisky revered by connoisseurs.",
+    "type": "Single Malt",
+    "distillery":"Dalmore",
+    "content": "70cl",
+    "region": "Highlands",
+    "country": "Scotland",
+    "alcohol": 40
+  }]
+}

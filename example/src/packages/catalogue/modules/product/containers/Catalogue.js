@@ -1,9 +1,19 @@
 import React from 'react';
+import whiskyCatalogue from '../services/whiskyCatalogue';
+import Whisky from '../components/Whisky';
 
-const Catalogue = props => (
+const Catalogue = ({ whiskyCatalogueFetch }) => (
   <div>
-    Catalogue!
+    {whiskyCatalogueFetch.pending && <p>Loading ...</p>}
+    {whiskyCatalogueFetch.fulfilled && (
+          <ul>
+            {whiskyCatalogueFetch.value.products.map(whisky => <li key={whisky.id}><Whisky {...whisky} /></li>)}
+          </ul>
+        )}
   </div>
 );
 
-export default Catalogue;
+Catalogue.propTypes = { whiskyCatalogueFetch: React.PropTypes.object };
+Catalogue.defaultProps = { whiskyCatalogueFetch: { pending: true } };
+
+export default whiskyCatalogue(Catalogue)
