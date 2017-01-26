@@ -10,17 +10,14 @@ import app from './packages/app';
 const store = configureStore();
 
 ReactDOM.render(
-    (
-        <Provider store={store}>
-            <Router>
-                <app.components.Layout>
-                    <div>
-                        Test
-                        {routes.map((route, i) => <MatchWithSubRoutes key={i} {...route} />)}
-                    </div>
-                </app.components.Layout>
-            </Router>
-        </Provider>
-    ),
-    document.getElementById('root')
+  (
+    <Provider store={store}>
+      <Router>
+        <app.components.Layout>
+          {routes.map((route, i) => <MatchWithSubRoutes key={i} {...route} />)}
+        </app.components.Layout>
+      </Router>
+    </Provider>
+  ),
+  document.getElementById('root')
 );

@@ -1,6 +1,9 @@
-import React from 'react';
-const Comp = () => <div>comp</div>;
-// TODO
-const routes = [ { pattern: '/', component: Comp }, { pattern: '/cart', component: Comp } ];
+import product from '../modules/product';
+import cart from '../modules/cart';
+
+const routes = [
+  { pattern: '/', component: product.scenes.CataloguePage, exactly: true },
+  { pattern: '/cart', component: cart.scenes.CartPage }
+];
 
 export default routes;
