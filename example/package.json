@@ -13,7 +13,8 @@
     "react-redux-fetch": "^0.6.6",
     "react-router": "v4.0.0-alpha.6",
     "redux": "^3.6.0",
-    "redux-immutable-state-invariant": "^1.2.4"
+    "redux-immutable-state-invariant": "^1.2.4",
+    "seamless-immutable": "^7.0.1"
   },
   "scripts": {
     "flow": "flow",

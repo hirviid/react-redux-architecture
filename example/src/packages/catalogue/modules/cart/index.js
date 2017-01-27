@@ -1,4 +1,12 @@
 import CartPage from './scenes/CartPage';
 import addToCart from './services/addToCart';
+import reducer from './reducer';
 
-export default { scenes: { CartPage }, services: { addToCart } }
+export default {
+  scenes: { CartPage },
+  services: { addToCart },
+  reducer,
+  constants: {
+    NAME: 'cart'
+  }
+}

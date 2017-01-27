@@ -1,16 +1,21 @@
 // @flow
 import React from 'react';
+import { connect } from 'react-redux';
 import type { CartProduct } from '../types';
+import { addProduct } from '../actions';
+
+type Props = {
+  dispatch: () => void,
+};
 
 const addToCart = (Component: ReactClass<*>) => {
 
   class AddToCart extends React.Component {
-    static propTypes = {
-    };
+    props: Props;
 
     handleAddToCart = (cartProduct: CartProduct) => {
-      console.log('todo, add product to cart', cartProduct);
-    }
+      this.props.dispatch(addProduct(cartProduct));
+    };
 
     render() {
       const {
@@ -21,7 +26,7 @@ const addToCart = (Component: ReactClass<*>) => {
     }
   }
 
-  return AddToCart;
+  return connect()(AddToCart);
 
 };
 
