@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "flow-bin": "^0.38.0",
     "react-scripts": "0.8.5"
   },
   "dependencies": {
@@ -15,6 +16,7 @@
     "redux-immutable-state-invariant": "^1.2.4"
   },
   "scripts": {
+    "flow": "flow",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

@@ -1,15 +1,14 @@
+// @flow
 import React from 'react';
-import pricePropType from './pricePropType';
 import formatMoney from './formatMoney';
+import type { Price } from './type';
 
 const currencySymbol = { EUR: '€' };
 
-const FormattedPrice = ({ value, currency }) => (
+const FormattedPrice = (props: Price) => (
   <span>
-    {currencySymbol[currency]}{' '}{formatMoney(value, 2, ',', ' ')}
+    {currencySymbol[props.currency]}{' '}{formatMoney(props.value, 2, ',', ' ')}
   </span>
 );
-
-FormattedPrice.propTypes = pricePropType;
 
 export default FormattedPrice;
