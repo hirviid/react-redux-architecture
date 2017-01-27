@@ -6,5 +6,5 @@ export type CartProduct = {
   name: string,
   price: Price,
   summary?: string,
-  count?: number,
+  quantity?: number,
 }
