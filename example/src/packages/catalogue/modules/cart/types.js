@@ -1,5 +1,5 @@
 // @flow
-import type { Price } from '../../../../components/FormattedPrice/type';
+import type { Price } from '@example/components/FormattedPrice/type';
 
 export type CartProduct = {
   id: number,

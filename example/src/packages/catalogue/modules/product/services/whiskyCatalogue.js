@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import reduxFetch from 'react-redux-fetch';
-import apiRoutes from '../../../../../app/api/routes';
+import apiRoutes from '@example/app/api/routes';
 
 const whiskyCatalogue = Component => {
   class WhiskyCatalogue extends React.Component {
