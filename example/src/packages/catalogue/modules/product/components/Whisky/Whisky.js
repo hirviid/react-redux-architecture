@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import FormattedPrice from '../../../../../../components/FormattedPrice';
+import FormattedPrice from '@example/components/FormattedPrice';
 
 const Whisky = ({ id, name, price, addToCart }) => (
   <div>
