@@ -2,7 +2,8 @@
 
 # dependencies
 node_modules/*
-!node_modules/.gitkeep
+local/node_modules/*
+!local/node_modules/.gitkeep
 
 # testing
 coverage
