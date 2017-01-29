@@ -4,7 +4,8 @@ import type { CartProduct } from '../../types';
 
 const CartProductItem = ({ product }: { product:CartProduct }) => (
   <div>
-    <img src={`/images/catalogue/${product.id}.jpg`} width={40} alt={name} /> {product.quantity} x {product.name}
+    <img src={`/images/catalogue/${product.id}.jpg`} width={40} alt={product.name} /> {product.quantity} x {product.name}<br />
+    {product.summary}
   </div>
 );
 

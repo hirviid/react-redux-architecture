@@ -16,7 +16,7 @@ const cartTranslator = (Component: ReactClass<*>) => {
       const cartProduct: CartProduct = {
         id: product.id,
         name: product.name,
-        summary: `${product.typ} - ${product.content}`,
+        summary: `${product.type} - ${product.content}`,
         price: product.price
       }
       this.props.addToCart(cartProduct);
