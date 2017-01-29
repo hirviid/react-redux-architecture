@@ -15,14 +15,14 @@ Whisky.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.object.isRequired,
-  description: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  distillery: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired,
-  region: PropTypes.string.isRequired,
-  country: PropTypes.string.isRequired,
-  alcohol: PropTypes.number.isRequired,
-  addToCart: PropTypes.func.isRequired
+  // description: PropTypes.string.isRequired,
+  // type: PropTypes.string.isRequired,
+  // distillery: PropTypes.string.isRequired,
+  // content: PropTypes.string.isRequired,
+  // region: PropTypes.string.isRequired,
+  // country: PropTypes.string.isRequired,
+  // alcohol: PropTypes.number.isRequired,
+  addToCart: PropTypes.func.isRequired,
 };
 
 export default Whisky;

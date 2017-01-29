@@ -4,7 +4,7 @@ import { middleware as fetchMiddleware } from 'react-redux-fetch';
 import rootReducer from '../../packages/rootReducer';
 
 function configureStoreProd(initialState) {
-  const middlewares = [ fetchMiddleware ];
+  const middlewares = [fetchMiddleware];
 
   return createStore(rootReducer, initialState, compose(applyMiddleware(...middlewares)));
 }
@@ -12,9 +12,10 @@ function configureStoreProd(initialState) {
 function configureStoreDev(initialState) {
   const middlewares = [
     // Add other middleware on this line...
-    // Redux middleware that spits an error on you when you try to mutate your state either inside a dispatch or between dispatches.
+    // Redux middleware that spits an error on you when you try to mutate your state either inside a dispatch
+    // or between dispatches.
     reduxImmutableStateInvariant(),
-    fetchMiddleware
+    fetchMiddleware,
   ];
 
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -24,7 +25,7 @@ function configureStoreDev(initialState) {
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('../../packages/rootReducer', () => {
-      const nextReducer = require('../../packages/rootReducer').default;
+      const nextReducer = require('../../packages/rootReducer').default; //eslint-disable-line
       // eslint-disable-line global-require
       store.replaceReducer(nextReducer);
     });

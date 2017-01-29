@@ -1,1 +1,1 @@
-export default { whiskyCatalogue: () => '/data/products.json' }
+export default { whiskyCatalogue: () => '/data/products.json' };

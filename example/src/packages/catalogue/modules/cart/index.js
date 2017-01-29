@@ -8,6 +8,6 @@ export default {
   services: { addToCart },
   reducer,
   constants: {
-    NAME
-  }
-}
+    NAME,
+  },
+};

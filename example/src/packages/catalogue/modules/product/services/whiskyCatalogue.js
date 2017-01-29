@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import reduxFetch from 'react-redux-fetch';
 import apiRoutes from '@example/app/api/routes';
 
-const whiskyCatalogue = Component => {
+const whiskyCatalogue = (Component) => {
   class WhiskyCatalogue extends React.Component {
     static propTypes = { dispatchWhiskyCatalogueGet: PropTypes.func.isRequired };
 
@@ -17,7 +17,7 @@ const whiskyCatalogue = Component => {
   }
 
   return reduxFetch(
-    props => [ { resource: 'whiskyCatalogue', request: { url: apiRoutes.whiskyCatalogue() } } ]
+    () => [{ resource: 'whiskyCatalogue', request: { url: apiRoutes.whiskyCatalogue() } }],
   )(WhiskyCatalogue);
 };
 

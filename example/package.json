@@ -3,6 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "eslint": "^3.13.0",
+    "eslint-config-airbnb": "latest",
+    "eslint-plugin-babel": "^4.0.1",
+    "eslint-plugin-flowtype": "^2.30.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0",
     "flow-bin": "^0.38.0",
     "mkdirp": "^0.5.1",
     "react-scripts": "0.8.5"
@@ -23,6 +30,60 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "postinstall": "node tools/symlinkSrc"
+    "postinstall": "node tools/symlinkSrc",
+    "fix": "eslint --fix src",
+    "lint": "eslint src"
+  },
+  "eslintConfig": {
+    "extends": "airbnb",
+    "parser": "babel-eslint",
+    "plugins": [
+      "babel",
+      "flowtype"
+    ],
+    "rules": {
+      "max-len": [
+        2,
+        120,
+        2,
+        {
+          "ignoreUrls": true,
+          "ignoreComments": false,
+          "ignoreRegExpLiterals": true,
+          "ignoreStrings": true,
+          "ignoreTemplateLiterals": true
+        }
+      ],
+      "react/forbid-prop-types": [
+        2,
+        {
+          "forbid": [
+            "any"
+          ]
+        }
+      ],
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
+      ],
+      "react/require-default-props": 0,
+      "import/no-extraneous-dependencies": 0,
+      "jsx-a11y/no-static-element-interactions": 0,
+      "no-underscore-dangle": 0,
+      "import/prefer-default-export": 0
+    },
+    "globals": {
+      "window": true,
+      "document": true,
+      "it": true,
+      "describe": true,
+      "expect": true,
+      "ReactClass": true
+    }
   }
 }

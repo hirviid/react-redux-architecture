@@ -9,7 +9,6 @@ type Props = {
 };
 
 const addToCart = (Component: ReactClass<*>) => {
-
   class AddToCart extends React.Component {
     props: Props;
 
@@ -27,7 +26,6 @@ const addToCart = (Component: ReactClass<*>) => {
   }
 
   return connect()(AddToCart);
-
 };
 
 export default addToCart;

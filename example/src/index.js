@@ -14,10 +14,10 @@ ReactDOM.render(
     <Provider store={store}>
       <Router>
         <app.components.Layout>
-          {routes.map((route, i) => <MatchWithSubRoutes key={i} {...route} />)}
+          {routes.map(route => <MatchWithSubRoutes key={route.pattern} {...route} />)}
         </app.components.Layout>
       </Router>
     </Provider>
   ),
-  document.getElementById('root')
+  document.getElementById('root'),
 );

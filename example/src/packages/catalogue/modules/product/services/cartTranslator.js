@@ -8,7 +8,6 @@ type Props = {
 };
 
 const cartTranslator = (Component: ReactClass<*>) => {
-
   class CartTranslator extends React.Component {
     props: Props;
 
@@ -17,8 +16,8 @@ const cartTranslator = (Component: ReactClass<*>) => {
         id: product.id,
         name: product.name,
         summary: `${product.type} - ${product.content}`,
-        price: product.price
-      }
+        price: product.price,
+      };
       this.props.addToCart(cartProduct);
     };
 

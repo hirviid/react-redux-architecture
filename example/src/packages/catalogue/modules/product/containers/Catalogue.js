@@ -8,10 +8,12 @@ const Catalogue = ({ whiskyCatalogueFetch, addToCart }) => (
   <div>
     {whiskyCatalogueFetch.pending && <p>Loading ...</p>}
     {whiskyCatalogueFetch.fulfilled && (
-          <ul>
-            {whiskyCatalogueFetch.value.products.map(whisky => <li key={whisky.id}><Whisky {...whisky} addToCart={() => addToCart(whisky)} /></li>)}
-          </ul>
-        )}
+      <ul>
+        {whiskyCatalogueFetch.value.products.map(whisky =>
+          <li key={whisky.id}><Whisky {...whisky} addToCart={() => addToCart(whisky)} /></li>)
+        }
+      </ul>
+    )}
   </div>
 );
 
@@ -20,7 +22,7 @@ Catalogue.defaultProps = { whiskyCatalogueFetch: { pending: true } };
 
 const enhance = compose(
   whiskyCatalogue,
-  cartTranslator
+  cartTranslator,
 );
 
 export default enhance(Catalogue);
