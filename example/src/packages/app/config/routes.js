@@ -4,12 +4,8 @@ import catalogueRoutes from '../../catalogue/config/routes';
 
 const routes = [...catalogueRoutes];
 
-export const MatchWithSubRoutes = route => (
-  <Match
-    {...route}
-    render={props => // pass the sub-routes down to keep nesting
-      <route.component {...props} routes={route.routes} />}
-  />
+export const MatchWithSubRoutes = route => ( // pass the sub-routes down to keep nesting
+  <Match {...route} render={props => <route.component {...props} routes={route.routes} />} />
 );
 
 export default routes;

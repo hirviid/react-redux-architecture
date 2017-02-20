@@ -5,13 +5,16 @@
   "devDependencies": {
     "eslint": "^3.13.0",
     "eslint-config-airbnb": "latest",
+    "eslint-config-prettier": "^1.2.0",
     "eslint-plugin-babel": "^4.0.1",
     "eslint-plugin-flowtype": "^2.30.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-prettier": "^2.0.0",
     "eslint-plugin-react": "^6.9.0",
     "flow-bin": "^0.38.0",
     "mkdirp": "^0.5.1",
+    "prettier": "^0.18.0",
     "react-scripts": "0.8.5"
   },
   "dependencies": {
@@ -32,19 +35,25 @@
     "eject": "react-scripts eject",
     "postinstall": "node tools/symlinkSrc",
     "fix": "eslint --fix src",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "eslint-check": "eslint --print-config .eslintrc | eslint-config-prettier-check"
   },
   "eslintConfig": {
-    "extends": "airbnb",
+    "extends": [
+        "airbnb",
+        "prettier",
+        "prettier/react"
+    ],
     "parser": "babel-eslint",
     "plugins": [
       "babel",
-      "flowtype"
+      "flowtype",
+      "prettier"
     ],
     "rules": {
       "max-len": [
         2,
-        120,
+        100,
         2,
         {
           "ignoreUrls": true,
@@ -75,7 +84,15 @@
       "import/no-extraneous-dependencies": 0,
       "jsx-a11y/no-static-element-interactions": 0,
       "no-underscore-dangle": 0,
-      "import/prefer-default-export": 0
+      "import/prefer-default-export": 0,
+      "prettier/prettier": [
+        2,
+        {
+          "printWidth": 100,
+          "trailingComma": true,
+          "singleQuote": true
+        }
+      ]
     },
     "globals": {
       "window": true,

@@ -11,7 +11,7 @@ const cartTranslator = (Component: ReactClass<*>) => {
   class CartTranslator extends React.Component {
     props: Props;
 
-    handleAddToCart = (product) => {
+    handleAddToCart = product => {
       const cartProduct: CartProduct = {
         id: product.id,
         name: product.name,
@@ -23,7 +23,7 @@ const cartTranslator = (Component: ReactClass<*>) => {
 
     render() {
       const {
-          ...other
+        ...other
       } = this.props;
 
       return <Component {...other} addToCart={this.handleAddToCart} />;

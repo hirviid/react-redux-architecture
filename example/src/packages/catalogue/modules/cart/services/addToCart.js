@@ -18,7 +18,7 @@ const addToCart = (Component: ReactClass<*>) => {
 
     render() {
       const {
-          ...other
+        ...other
       } = this.props;
 
       return <Component {...other} addToCart={this.handleAddToCart} />;

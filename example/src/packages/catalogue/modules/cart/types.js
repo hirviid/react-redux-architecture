@@ -7,4 +7,4 @@ export type CartProduct = {
   price: Price,
   summary?: string,
   quantity?: number,
-}
+};

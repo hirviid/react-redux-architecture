@@ -10,14 +10,12 @@ import app from './packages/app';
 const store = configureStore();
 
 ReactDOM.render(
-  (
-    <Provider store={store}>
-      <Router>
-        <app.components.Layout>
-          {routes.map(route => <MatchWithSubRoutes key={route.pattern} {...route} />)}
-        </app.components.Layout>
-      </Router>
-    </Provider>
-  ),
+  <Provider store={store}>
+    <Router>
+      <app.components.Layout>
+        {routes.map(route => <MatchWithSubRoutes key={route.pattern} {...route} />)}
+      </app.components.Layout>
+    </Router>
+  </Provider>,
   document.getElementById('root'),
 );

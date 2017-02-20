@@ -12,7 +12,8 @@ function configureStoreProd(initialState) {
 function configureStoreDev(initialState) {
   const middlewares = [
     // Add other middleware on this line...
-    // Redux middleware that spits an error on you when you try to mutate your state either inside a dispatch
+    // Redux middleware that spits an error on you when you
+    // try to mutate your state either inside a dispatch
     // or between dispatches.
     reduxImmutableStateInvariant(),
     fetchMiddleware,
@@ -20,7 +21,11 @@ function configureStoreDev(initialState) {
 
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
   // add support for Redux dev tools
-  const store = createStore(rootReducer, initialState, composeEnhancers(applyMiddleware(...middlewares)));
+  const store = createStore(
+    rootReducer,
+    initialState,
+    composeEnhancers(applyMiddleware(...middlewares)),
+  );
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
@@ -34,6 +39,8 @@ function configureStoreDev(initialState) {
   return store;
 }
 
-const configureStore = process.env.NODE_ENV === 'production' ? configureStoreProd : configureStoreDev;
+const configureStore = process.env.NODE_ENV === 'production'
+  ? configureStoreProd
+  : configureStoreDev;
 
 export default configureStore;
