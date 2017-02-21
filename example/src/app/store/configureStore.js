@@ -1,15 +1,14 @@
 import { createStore, compose, applyMiddleware } from 'redux';
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import { middleware as fetchMiddleware } from 'react-redux-fetch';
-import rootReducer from '../../packages/rootReducer';
 
-function configureStoreProd(initialState) {
+function configureStoreProd(rootReducer, initialState) {
   const middlewares = [fetchMiddleware];
 
   return createStore(rootReducer, initialState, compose(applyMiddleware(...middlewares)));
 }
 
-function configureStoreDev(initialState) {
+function configureStoreDev(rootReducer, initialState) {
   const middlewares = [
     // Add other middleware on this line...
     // Redux middleware that spits an error on you when you
@@ -26,15 +25,6 @@ function configureStoreDev(initialState) {
     initialState,
     composeEnhancers(applyMiddleware(...middlewares)),
   );
-
-  if (module.hot) {
-    // Enable Webpack hot module replacement for reducers
-    module.hot.accept('../../packages/rootReducer', () => {
-      const nextReducer = require('../../packages/rootReducer').default; //eslint-disable-line
-      // eslint-disable-line global-require
-      store.replaceReducer(nextReducer);
-    });
-  }
 
   return store;
 }
