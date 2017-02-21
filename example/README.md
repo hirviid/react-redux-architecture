@@ -15,7 +15,7 @@ This allows the use of `import apiRoutes from '@example/app/api/routes';` in ste
 On windows, creating the symbolic links requires Administrator rights. Therefore, you should run CMD prompt as Administrator before running `yarn install` or `yarn postinstall`.
 
 
-### Depedencies
+### Dependencies
 
 This section list which part of the app can reference other parts of the app. Only allowing uni-directional dependencies.
 
