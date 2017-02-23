@@ -7,7 +7,7 @@ type Props = {
   addToCart: (cartProduct: CartProduct) => void,
 };
 
-const cartTranslator = (Component: ReactClass<*>) => {
+const cartTranslator = (Component: ReactClass<*>): ReactClass<*> => {
   class CartTranslator extends React.Component {
     props: Props;
 

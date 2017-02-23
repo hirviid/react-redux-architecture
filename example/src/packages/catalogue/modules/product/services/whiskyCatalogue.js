@@ -1,14 +1,19 @@
-import React, { PropTypes } from 'react';
+// @flow
+import React from 'react';
 import reduxFetch from 'react-redux-fetch';
 import apiRoutes from '@example/app/api/routes';
 
-const whiskyCatalogue = Component => {
-  class WhiskyCatalogue extends React.Component {
-    static propTypes = { dispatchWhiskyCatalogueGet: PropTypes.func.isRequired };
+type Props = {
+  dispatchWhiskyCatalogueGet: Function,
+};
 
+const whiskyCatalogue = (Component: ReactClass<*>): ReactClass<*> => {
+  class WhiskyCatalogue extends React.Component {
     componentWillMount() {
       this.props.dispatchWhiskyCatalogueGet();
     }
+
+    props: Props;
 
     render() {
       const { ...other } = this.props;

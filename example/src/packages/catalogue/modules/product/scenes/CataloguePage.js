@@ -1,6 +1,9 @@
+// @flow
 import React from 'react';
 import Catalogue from '../containers/Catalogue';
 
-const CataloguePage = props => <Catalogue {...props} />;
+type Props = {};
+
+const CataloguePage = (props: Props) => <Catalogue {...props} />;
 
 export default CataloguePage;

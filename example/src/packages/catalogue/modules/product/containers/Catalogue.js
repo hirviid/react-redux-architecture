@@ -1,10 +1,25 @@
+// @flow
 import React from 'react';
 import { compose } from 'redux';
 import whiskyCatalogue from '../services/whiskyCatalogue';
 import cartTranslator from '../services/cartTranslator';
 import Whisky from '../components/Whisky';
+import type { Whisky as WhiskyType } from '../types/Whisky';
 
-const Catalogue = ({ whiskyCatalogueFetch, addToCart }) => (
+type Props = {
+  whiskyCatalogueFetch: {
+    pending: boolean,
+    fulfilled?: boolean,
+    value: {
+      products: Array<WhiskyType>,
+    },
+  },
+  addToCart: (WhiskyType) => void,
+};
+
+const Catalogue = (
+  { whiskyCatalogueFetch = { pending: true, value: { products: [] } }, addToCart }: Props,
+) => (
   <div>
     {whiskyCatalogueFetch.pending && <p>Loading ...</p>}
     {whiskyCatalogueFetch.fulfilled &&
@@ -15,12 +30,6 @@ const Catalogue = ({ whiskyCatalogueFetch, addToCart }) => (
       </ul>}
   </div>
 );
-
-Catalogue.propTypes = {
-  whiskyCatalogueFetch: React.PropTypes.object,
-  addToCart: React.PropTypes.func.isRequired,
-};
-Catalogue.defaultProps = { whiskyCatalogueFetch: { pending: true } };
 
 const enhance = compose(whiskyCatalogue, cartTranslator);
 

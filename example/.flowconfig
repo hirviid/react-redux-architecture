@@ -2,7 +2,6 @@
 [ignore]
 .*/node_modules/fbjs/*
 .*/node_modules/invariant/*
-.*/react-redux-fetch/*
 .*/node_modules/styled-components/*
 
 [options]
