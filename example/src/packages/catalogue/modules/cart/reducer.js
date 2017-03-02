@@ -1,5 +1,5 @@
 import immutable from 'seamless-immutable';
-import { CART_ADDED } from './actionTypes';
+import { PRODUCT_ADDED } from './actionTypes';
 
 const INITIAL_STATE = {
   products: {},
@@ -7,7 +7,7 @@ const INITIAL_STATE = {
 
 export default (state = immutable(INITIAL_STATE), action) => {
   switch (action.type) {
-    case CART_ADDED:
+    case PRODUCT_ADDED:
       if (state.products[action.payload.id]) {
         return state.setIn(
           ['products', action.payload.id, 'quantity'],
