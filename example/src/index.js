@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
 
 import configureStore from './app/store/configureStore';
-import routes, { MatchWithSubRoutes } from './packages/app/config/routes';
 import rootReducer from './packages/rootReducer';
 import app from './packages/app';
 
@@ -12,11 +10,7 @@ const store = configureStore(rootReducer);
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router>
-      <app.components.Layout>
-        {routes.map(route => <MatchWithSubRoutes key={route.path} {...route} />)}
-      </app.components.Layout>
-    </Router>
+      <app.components.Layout />
   </Provider>,
   document.getElementById('root')
 );

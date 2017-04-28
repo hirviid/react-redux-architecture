@@ -14,12 +14,13 @@ type Props = {
       products: Array<WhiskyType>,
     },
   },
-  addToCart: (WhiskyType) => void,
+  addToCart: WhiskyType => void,
 };
 
-const Catalogue = (
-  { whiskyCatalogueFetch = { pending: true, value: { products: [] } }, addToCart }: Props,
-) => (
+const Catalogue = ({
+  whiskyCatalogueFetch = { pending: true, value: { products: [] } },
+  addToCart,
+}: Props) => (
   <div>
     {whiskyCatalogueFetch.pending && <p>Loading ...</p>}
     {whiskyCatalogueFetch.fulfilled &&

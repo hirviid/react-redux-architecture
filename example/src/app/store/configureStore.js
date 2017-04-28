@@ -23,7 +23,7 @@ function configureStoreDev(rootReducer, initialState) {
   const store = createStore(
     rootReducer,
     initialState,
-    composeEnhancers(applyMiddleware(...middlewares)),
+    composeEnhancers(applyMiddleware(...middlewares))
   );
 
   return store;
