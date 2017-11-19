@@ -1,14 +1,23 @@
 import { createStore, compose, applyMiddleware } from 'redux';
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import { middleware as fetchMiddleware } from 'react-redux-fetch';
+import createSagaMiddleware from 'redux-saga';
 
-function configureStoreProd(rootReducer, initialState) {
-  const middlewares = [fetchMiddleware];
+const sagaMiddleware = createSagaMiddleware();
 
-  return createStore(rootReducer, initialState, compose(applyMiddleware(...middlewares)));
+function configureStoreProd(rootReducer, rootSaga, initialState) {
+  sagaMiddleware.run(rootSaga);
+
+  const middlewares = [fetchMiddleware, sagaMiddleware];
+
+  const store = createStore(rootReducer, initialState, compose(applyMiddleware(...middlewares)));
+
+  sagaMiddleware.run(rootSaga);
+
+  return store;
 }
 
-function configureStoreDev(rootReducer, initialState) {
+function configureStoreDev(rootReducer, rootSaga, initialState) {
   const middlewares = [
     // Add other middleware on this line...
     // Redux middleware that spits an error on you when you
@@ -16,6 +25,7 @@ function configureStoreDev(rootReducer, initialState) {
     // or between dispatches.
     reduxImmutableStateInvariant(),
     fetchMiddleware,
+    sagaMiddleware,
   ];
 
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -25,6 +35,8 @@ function configureStoreDev(rootReducer, initialState) {
     initialState,
     composeEnhancers(applyMiddleware(...middlewares))
   );
+
+  sagaMiddleware.run(rootSaga);
 
   return store;
 }
