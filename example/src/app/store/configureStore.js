@@ -6,8 +6,6 @@ import createSagaMiddleware from 'redux-saga';
 const sagaMiddleware = createSagaMiddleware();
 
 function configureStoreProd(rootReducer, rootSaga, initialState) {
-  sagaMiddleware.run(rootSaga);
-
   const middlewares = [fetchMiddleware, sagaMiddleware];
 
   const store = createStore(rootReducer, initialState, compose(applyMiddleware(...middlewares)));
