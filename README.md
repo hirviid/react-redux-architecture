@@ -23,7 +23,7 @@ An opinionated architecture for structuring large React/Redux applications.
 	- [react-redux-fetch](#react-redux-fetch)
 
 ## Diagram
-<img src="https://cloud.githubusercontent.com/assets/6641475/22184991/ff441c9a-e0dc-11e6-8238-7bd5e684686f.png" alt=“React Redux Architecture“ width="500" />
+![React Redux Architecture](https://cloud.githubusercontent.com/assets/6641475/22184991/ff441c9a-e0dc-11e6-8238-7bd5e684686f.png)
 
 ## Layers
 
